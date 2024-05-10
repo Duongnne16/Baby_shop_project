@@ -1,6 +1,12 @@
 ﻿Use AngelAndBabyShop
 go
 
+UPDATE Product 
+SET discount = 0
+WHERE id > 0;
+
+
+
 INSERT INTO dbo.Product (category_id, title, inbound_price, outbound_price, supply_id, description)
 VALUES
 (1, N'Bộ thô ngắn tay bé gái Rabity', 129000, 229000, 1, N'Chất liệu: 100% cotton spandex co giãn, thấm hút và thoáng mồ hôi'),

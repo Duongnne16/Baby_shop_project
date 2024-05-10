@@ -16,19 +16,20 @@ WITH
 
 --update giá tiền cho bảng Order
 UPDATE Orders
-SET total_money = od.num * p.outbound_price
-FROM Orders o
-JOIN Order_Details od ON o.id = od.order_id
-JOIN Product p ON od.product_id = p.id;
+SET total_money = od.num * od.price
+FROM Orders o JOIN Order_Details od ON o.id = od.order_id
+
 
 
 
 --DBCC CHECKIDENT (Orders, RESEED, 0);
 --ALter table Orders add total_money int;
-
+/*
 SELECT od.order_id, SUM(od.price * od.num) AS total_money
 FROM Order_Details od
 GROUP BY od.order_id
 ORDER BY od.order_id;
+*/
+
 
 
